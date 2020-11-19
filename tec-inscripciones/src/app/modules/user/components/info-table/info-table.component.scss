@@ -1,0 +1,15 @@
+$sec-color: orange;
+$thi-color: aqua;
+$letra-color: green;
+
+.rowtitle
+{
+    background-color: $sec-color;
+	color: $letra-color;
+}
+
+.rowcontent
+{
+    background-color: $thi-color;
+    color: $letra-color;
+}

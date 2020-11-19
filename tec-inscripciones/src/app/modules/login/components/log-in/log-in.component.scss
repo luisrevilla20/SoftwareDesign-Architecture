@@ -1,0 +1,70 @@
+//Important variables
+$body-pad: 40px;
+$letra: Helvetica;
+$img-bw: 200px;
+$img-bh: 100px;
+$sign-w: 100%;
+$sign-w-max: 330px;
+$sign-p: 15px;
+$form-control-p: 10px;
+$form-control-letra-tam: 16px;
+$input-mtop: -1px;
+$input-rl: 0px;
+$input-rr: 0px;
+$pri-color: green;
+
+
+.body1 
+{
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: $body-pad;
+    font-family: $letra;
+}
+
+.bodylogo
+{
+    width: $img-bw;
+    height: $img-bh;
+}
+
+
+.form-signin
+{
+	width: $sign-w;
+	max-width: $sign-w-max;
+	padding: $sign-p;
+	margin: auto;
+}
+
+.form-signin .form-control
+{
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: $form-control-p;
+	font-size: $form-control-letra-tam;
+}
+
+.form-signin .form-control:focus
+{
+	z-index: 2;
+}
+.form-signin input[type="email"]
+{
+	margin-top: $input-mtop;
+	border-bottom-right-radius: $input-rr;
+	border-bottom-left-radius: $input-rl;
+}
+.form-signin input[type="password"] 
+{
+	margin-bottom: $input-mtop;
+	border-top-left-radius: $input-rl;
+	border-top-right-radius: $input-rr;
+}
+
+.btn-primary
+{
+  margin-top: 10px;
+}
