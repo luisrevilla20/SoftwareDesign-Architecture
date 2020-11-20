@@ -4,8 +4,8 @@ import { PageNotFoundComponent } from './main_components/page-not-found/page-not
 
 
 const routes: Routes = [
-  //{path: 'User', loadChildren: './modules/user/user.module#UserModule'},
-  {path: 'LogIn', loadChildren: './modules/login/login.module#LoginModule'},
+  {path: 'User', loadChildren: './modules/user/user.module#UserModule'},
+  {path: '', loadChildren: './modules/login/login.module#LoginModule'},
   {path: '**', component: PageNotFoundComponent }
 ];
 

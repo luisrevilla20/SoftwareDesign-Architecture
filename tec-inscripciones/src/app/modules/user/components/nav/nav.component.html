@@ -1,28 +1,47 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-	<a class="navbar-brand my-0 mr-md-auto text-muted" (click)="goToPage('/User/Home')" href="./User/Home">
-	  <img  src="./../../../../../assets/img/logo2.png"  class="d-inline-block align-top navlogo" alt="Logo">
-	  Payit
+  <a class="navbar-brand my-0 mr-md-auto text-muted" (click)="goToPage('/User/Home')" href="./User/Home">
+    <img src="./../../../../../assets/img/logo2.png" class="d-inline-block align-top navlogo" alt="Logo">
+    Payit
+  </a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" (click)="goToPage('/User/Send')" href="./User/Home">Reservas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="goToPage('/User/Send')" href="./User/Send">Apartar</a>
+    </li>
+  </ul>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <h5 class="p-2 text-dark" *ngIf="user">Hello {{user.user_name}} </h5>
+    </li>
+  </ul>
+</div>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<a class="navbar-brand" href="#">
+	  <img src="https://cimav.edu.mx/wp-content/uploads/2015/09/itesm.png" width="100" height="100"
+		class="d-inline-block align-top" alt="">
 	</a>
-	<ul class="nav nav-pills">
-	  <li class="nav-item">
-		<a class="nav-link" (click)="goToPage('/User/Send')" href="./User/Home" >Home</a>
-	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" (click)="goToPage('/User/Send')" href="./User/Send" >Send</a>
-	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" (click)="goToPage('/User/Send')" href="./User/Withdrawal" >Withdrawal</a>
-	  </li>
-	  <li class="nav-item">
-		<a class="nav-link" (click)="goToPage('/User/Send')" href="./User/Account" >Account</a>
-	  </li>
-	</ul>
-	<ul class="nav nav-pills">
-	<li class="nav-item">
-		<h5 class="p-2 text-dark" *ngIf= "user">Hello {{user.user_name}} </h5>
-	  </li>
-	  <li class="nav-item">
-		  <h5 class="p-2 text-danger bg-warning">BETA</h5>
-	  </li>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+	  aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+  
+	<div class="collapse navbar-collapse" id="navbarColor01">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="#">Home</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">Features</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">Pricing</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">About</a>
+		</li>
 	  </ul>
-  </div>
+	</div>
+  </nav> -->

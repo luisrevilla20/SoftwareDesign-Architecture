@@ -27,6 +27,8 @@ export class LogInComponent implements OnInit {
   }
 
   login(){
+    console.log("HOLAAAAAA");
+    
     this.goToPage('/User/Home');
   }
   /*
