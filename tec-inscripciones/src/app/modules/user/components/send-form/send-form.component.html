@@ -15,39 +15,46 @@
 </div> -->
 
 <div class="container mt-4">
-	<h1>Aparta tu aula</h1>
-  
-	<div class="form-aula mt-5">
-  
-	  <form class="row">
-  
-		<div class="form-group col-5">
-		  <label class="form-label" for="">Selecciona la clase</label>
-		  <select class="custom-select form-control">
-			<option selected="">------------</option>
-			<option value="1">One</option>
-			<option value="2">Two</option>
-			<option value="3">Three</option>
-		  </select>
-		</div>
-  
-		<div class="col-2"></div>
-  
-		<div id="caracteristicasAula" class="col-5">
-		  <legend>Características de la clase</legend>
-		  <p>Aquí se mostrarán las caracteríscticas de la case una vez que hayas seleccionado alguna</p>
-		</div>
-  
-		<div class="form-group col-5">
-		  <label class="form-label" for="">Selecciona un horario</label>
-		  <input class="form-control" type="datetime-local" id="datetime" name="">
-		</div>
-  
-		<button type="submit" class="btn btn-primary">Guardar</button>
-  
-	  </form>
-  
-	</div>
-  
+  <h1>Aparta tu aula</h1>
+
+  <div class="form-aula mt-5 row">
+
+    <form class="col-6 row">
+
+      <div class="form-group col-6">
+        <label class="form-label" for="">Selecciona la clase</label>
+        <select class="custom-select form-control">
+          <option selected="">------------</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+
+      <div class="form-group col-6">
+        <label class="form-label" for="">Selecciona un día</label>
+        <input class="form-control" type="date" id="datetime" name="">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="form-label" for="">Selecciona una hora de inicio</label>
+        <input class="form-control" type="time" id="datetime" name="">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="form-label" for="">Selecciona una hora de fin</label>
+        <input class="form-control" type="time" id="datetime" name="">
+      </div>
+
+      <button type="submit" class="btn btn-primary col-12">Guardar</button>
+
+    </form>
+
+    <div id="caracteristicasAula" class="col-6">
+      <legend>Características de la clase</legend>
+      <p>Aquí se mostrarán las caracteríscticas de la case una vez que hayas seleccionado alguna</p>
+    </div>
+
   </div>
-  
+
+</div>
