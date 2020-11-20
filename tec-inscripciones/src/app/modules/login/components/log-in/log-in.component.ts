@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { LogService} from './../../services/log/log.services';
 import { User } from '../../../user/models/user/user';
-import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-log-in',
@@ -10,13 +10,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
-  public mail: string;
-  public pass: string;
+  public mail: string | undefined ;
+  public pass: string | undefined;
 
   constructor(
     public logService:LogService,
-    private router: Router,
-    private auth: AuthService) { }
+    private router: Router,) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +26,10 @@ export class LogInComponent implements OnInit {
     this.router.navigate([pageName]);
   }
 
+  login(){
+    this.goToPage('/User/Home');
+  }
+  /*
   login(){
     this.logService.createToken().subscribe(user => {
       this.user.session = user.token;
@@ -41,4 +44,5 @@ export class LogInComponent implements OnInit {
       });
     });
   }
+  */
 }

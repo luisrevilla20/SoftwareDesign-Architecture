@@ -5,7 +5,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 
 
 const rutas: Routes= [
-    {path: 'Log', component: LogInComponent},
+    {path: '', component: LogInComponent},
 ]
 
 @NgModule({

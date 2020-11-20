@@ -49,7 +49,7 @@ export class SettingsComponent implements OnInit {
   }
 
   updateUser(body) {
-    this.http.patch<any>(`https://a37135c55a90.ngrok.io/user/${(this.auth.user.user as any).id}`, body,{
+    this.http.patch<any>(`https://b697e71a90b9.ngrok.io/user/${(this.auth.user.user as any).id}`, body,{
       headers: new HttpHeaders()
           .set('Authorization', `bearer ${this.token}`)
     }).subscribe(data => {

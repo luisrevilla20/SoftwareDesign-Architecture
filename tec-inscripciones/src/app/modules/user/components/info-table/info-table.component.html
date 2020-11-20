@@ -7,9 +7,9 @@
 	</div>
 
 	<div class="row rowcontent" *ngFor= "let transaction of transactions">
-			<div class="col">{{transaction.type}}</div>
-		  	<div class="col">{{transaction.amount}}</div>
-		  	<div class="col">{{transaction.origin}}</div>
-			<div class="col">{{transaction.destination}}</div>
+			<div class="col .col-sm-3 text-center">{{transaction.type}}</div>
+		  	<div class="col .col-sm-3 text-center">{{transaction.amount}}</div>
+		  	<div class="col .col-sm-3 text-center">{{transaction.origin}}</div>
+			<div class="col .col-sm-3 text-center">{{transaction.destination}}</div>
 	</div>
 </div>

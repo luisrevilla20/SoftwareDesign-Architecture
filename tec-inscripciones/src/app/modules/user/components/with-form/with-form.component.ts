@@ -21,7 +21,7 @@ export class WithFormComponent implements OnInit {
   }
 
   send() {
-    this.http.post('https://a37135c55a90.ngrok.io/transaction/withdrawal',{
+    this.http.post('https://b697e71a90b9.ngrok.io/transaction/withdrawal',{
       user_id: this.auth.user.user.id,
       amount: this.amount
     }, {

@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [LogInComponent],
+  declarations: [LogInComponent,],
   imports: [
     CommonModule,
     LogInRoutingModule,
@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule
   ],
   providers: [
-    LogService,
+    LogService
   ]
 })
 export class LoginModule { }

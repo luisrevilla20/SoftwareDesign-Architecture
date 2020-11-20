@@ -26,7 +26,7 @@ export class BalanceComponent implements OnInit {
   }
 
   getBalance() {
-    this.http.get<any>(`https://a37135c55a90.ngrok.io/user/balance/${(this.user as any).user.id}`,{
+    this.http.get<any>(`https://b697e71a90b9.ngrok.io/user/balance/${(this.user as any).user.id}`,{
       headers: new HttpHeaders()
           .set('Authorization', `bearer ${this.token}`)
     }).subscribe(data => {

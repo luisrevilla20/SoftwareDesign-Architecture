@@ -13,7 +13,7 @@ import { WithdrawalComponent } from './pages/withdrawal/withdrawal.component';
 import { AccountComponent } from './pages/account/account.component';
 
 const rutas: Routes= [
-    {path: 'Home', component: HomeComponent},
+    {path: '', component: HomeComponent},
     {path: 'Send', component: SendComponent},
     {path: 'Withdrawal', component: WithdrawalComponent},
     {path: 'Account', component: AccountComponent}
