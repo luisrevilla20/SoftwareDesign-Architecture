@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user/user';
 import { UserService } from '../../services/user/user.service';
 import { Router} from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+//import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,11 +15,11 @@ export class NavComponent implements OnInit {
   constructor(
     public userService:UserService,
     private router: Router,
-    public auth: AuthService
+    //public auth: AuthService
     ) { }
 
   ngOnInit(): void {
-    this.user = this.auth.user.user;
+    //this.user = this.auth.user.user;
   }
 
   goToPage(pageName: string):void {

@@ -25,7 +25,7 @@ import { UserModule } from './modules/user/user.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     LoginModule,
-    UserModule,
+    //UserModule,
     HttpClientModule
   ],
   providers: [],
