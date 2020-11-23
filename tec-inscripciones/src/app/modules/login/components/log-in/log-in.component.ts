@@ -27,10 +27,35 @@ export class LogInComponent implements OnInit {
   }
 
   login(){
-    this.logService.login({email: this.email,
-    password: this.password})
-    let a = this.logService.prueba();
-    console.log("Perrrroooooooo", a);
+    // this.logService.login({email: this.email,
+    // password: this.password})
+
+    // this.logService.login().subscribe((user) => {
+    //   console.log(user);
+    // })
+
+    this.logService.login({email: this.email, password: this.password}, {})
+      //this.goToPage('/User/Home');
+
+    // this.logService.login().subscribe(user => {
+      // this.user.session = user.token;
+      // this.logService.login({
+      //   email: this.email,
+      //   password: this.password
+      // }, this.user).subscribe(data => {
+      //   this.auth.user = data;
+      //   localStorage.setItem('tokenAuth', user.token);
+      //   localStorage.setItem('user',JSON.stringify(data));
+      //   this.goToPage('/User/Home');
+      // });
+    // });
+
+    // let a = this.logService.prueba(data =>
+    //   );
+    // this.logService.prueba().subscribe((data) => {
+    //   console.log(data);
+    // })
+    // console.log("Perrrroooooooo");
     //this.goToPage('/User/Home');
   }
   /*
