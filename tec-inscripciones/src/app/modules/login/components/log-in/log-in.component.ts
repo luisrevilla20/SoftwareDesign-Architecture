@@ -10,8 +10,8 @@ import { User } from '../../../user/models/user/user';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
-  public mail: string | undefined ;
-  public pass: string | undefined;
+  public email: string | undefined;
+  public password: string | undefined;
 
   constructor(
     public logService:LogService,
@@ -27,9 +27,11 @@ export class LogInComponent implements OnInit {
   }
 
   login(){
-    console.log("HOLAAAAAA");
-    
-    this.goToPage('/User/Home');
+    this.logService.login({email: this.email,
+    password: this.password})
+    let a = this.logService.prueba();
+    console.log("Perrrroooooooo", a);
+    //this.goToPage('/User/Home');
   }
   /*
   login(){
@@ -43,7 +45,7 @@ export class LogInComponent implements OnInit {
         localStorage.setItem('tokenAuth', user.token);
         localStorage.setItem('user',JSON.stringify(data));
         this.goToPage('/User/Home');
-      });
+        });
     });
   }
   */

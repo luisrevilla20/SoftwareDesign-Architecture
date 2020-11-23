@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Transaction } from '../../models/transactions/transaction';
+import { Reservation } from '../../models/reservation/reservation';
 //import { AuthService } from 'src/app/services/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class InfoTableComponent implements OnInit {
 
-  transactions: Transaction[] | undefined;
+  reservations: Reservation[] | undefined;
   //token: string;
   constructor(
     //public auth: AuthService,
@@ -20,10 +20,10 @@ export class InfoTableComponent implements OnInit {
 
   ngOnInit(): void {
     //this.token = localStorage.getItem('tokenAuth');
-    this.getTransaction();
+    this.getReservation();
   }
 
-  getTransaction() {
+  getReservation() {
     /*
     this.http.get<any>(`https://b697e71a90b9.ngrok.io/user/transactions/${(this.auth.user as any).user.id}`,{
       headers: new HttpHeaders()
