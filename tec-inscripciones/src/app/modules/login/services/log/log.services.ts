@@ -30,17 +30,13 @@ export class LogService {
 		  .set('authorization', user.session)
 	  });
   } */
-
+/*
   login(data: any): Observable <any>{
-    console.log("gggggggggggggggggggggggggg", `${this.endpoint}user/login`, data);
+    console.log("gggggggggggggggggggggggggg", `${this.endpoint}user/login`, data );
 
-    return this.http.post(`${this.endpoint}user/login`, data);
-  }
+    return this.http.post(`${this.endpoint}user/login`, data, {headers: new HttpHeaders()});
+  }*/
 
-  prueba(): Observable <any>{
-
-    return this.http.get(`https://838e92274eb4.ngrok.io/classroom`);
-  }
 
   private extractData(res: Response) {
     let body = res;

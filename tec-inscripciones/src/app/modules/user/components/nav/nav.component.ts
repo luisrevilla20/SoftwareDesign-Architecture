@@ -10,7 +10,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-	user: User = {};
+  user: any = {};
 
   constructor(
     public userService:UserService,
@@ -19,7 +19,9 @@ export class NavComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    //this.user = this.auth.user.user;
+    this.user = localStorage.getItem("user");
+    this.user = JSON.parse(this.user);
+    console.log(this.user);
   }
 
   goToPage(pageName: string):void {
