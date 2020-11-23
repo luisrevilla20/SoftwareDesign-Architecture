@@ -10,13 +10,7 @@ import { map, catchError, tap} from 'rxjs/operators'
 })
 export class LogService {
 
-  endpoint = 'https://838e92274eb4.ngrok.io/';
-
-  httpOptions = {
-    header: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  }
+  endpoint = 'https://683cbd401a84.ngrok.io/';
 
   user: User | undefined;
 
@@ -40,7 +34,6 @@ export class LogService {
 
   private extractData(res: Response) {
     let body = res;
-    console.log(res)
     return body || {};
   }
 
