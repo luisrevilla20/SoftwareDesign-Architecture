@@ -35,9 +35,7 @@ export class LogInComponent implements OnInit {
       headers: new HttpHeaders()
           .set('Authorization', `bearer`)
     }).subscribe(data => {
-      console.log(data);
       this.user = data;
-      console.log(this.user);
       localStorage.setItem('user',JSON.stringify(data));
       this.goToPage('/User/Home');
     });

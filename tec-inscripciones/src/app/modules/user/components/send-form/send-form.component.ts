@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 //import { AuthService } from 'src/app/services/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Classroom } from './../../models/classroom/classroom'
+import { UserService } from './../../services/user/user.service'
+
+declare function ready(): any; 
 
 @Component({
   selector: 'app-send-form',
@@ -8,17 +12,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./send-form.component.scss']
 })
 export class SendFormComponent implements OnInit {
-  amount: number | undefined;
-  origin: string | undefined;
-  token: string | undefined;
+  classrooms: Classroom[] | undefined;
 
   constructor(
-    //private auth: AuthService,
+    public userService: UserService,
     private http: HttpClient
   ) { }
 
   ngOnInit(): void {
-    //this.token = localStorage.getItem('tokenAuth');
+    // this.classrooms = this.userService.getClassrooms();
+    // console.log("HOLAAAAA");
+    // console.log(this.classrooms);
+    // console.log(typeof(this.classrooms));
+
+    this.userService.getClassrooms().subscribe((data) => {
+        this.classrooms = data;
+        console.log(data);
+    })
+    console.log("AAAAAA");
+    ready();
   }
 
   send() {
