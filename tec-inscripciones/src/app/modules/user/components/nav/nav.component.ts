@@ -21,7 +21,6 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     this.user = localStorage.getItem("user");
     this.user = JSON.parse(this.user);
-    console.log(this.user);
   }
 
   goToPage(pageName: string):void {

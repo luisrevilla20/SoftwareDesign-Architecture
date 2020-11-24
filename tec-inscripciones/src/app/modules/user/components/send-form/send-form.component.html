@@ -23,7 +23,7 @@
 
       <div class="form-group col-6">
         <label class="form-label" for="">Selecciona la clase</label>
-        <select class="custom-select form-control" id="classroom">
+        <select class="custom-select form-control" id="classroom_select" onchange="selectValueChange()" [(ngModel)]="classroom_id" [ngModelOptions]="{ standalone: true }">
           <option value="">-------------------</option>
           <option *ngFor="let classroom of classrooms" [value]="classroom.id">{{classroom.name}}</option>
         </select>
@@ -31,31 +31,31 @@
 
       <div class="form-group col-6">
         <label class="form-label" for="">Selecciona un día</label>
-        <input class="form-control" type="date" id="date" name="">
+        <input class="form-control" type="date" id="date" [(ngModel)]="date" [ngModelOptions]="{ standalone: true }">
       </div>
 
       <div class="form-group col-6">
         <label class="form-label" for="">Selecciona una hora de inicio</label>
-        <input class="form-control" type="time" id="start_time" name="">
+        <input class="form-control" type="time" id="start_time" [(ngModel)]="start_time" [ngModelOptions]="{ standalone: true }">
       </div>
 
       <div class="form-group col-6">
         <label class="form-label" for="">Selecciona una hora de fin</label>
-        <input class="form-control" type="time" id="end_time" name="">
+        <input class="form-control" type="time" id="end_time" [(ngModel)]="end_time" [ngModelOptions]="{ standalone: true }">
       </div>
 
       <div class="form-group col-12">
         <label class="form-label" for="">Descripción</label>
-        <input class="form-control" type="text" id="description" name="">
+        <input class="form-control" type="text" id="description" [(ngModel)]="description" [ngModelOptions]="{ standalone: true }">
       </div>
 
-      <button type="submit" class="btn btn-primary col-12">Guardar</button>
+      <button type="submit" class="btn btn-primary col-12" (click)="send()">Apartar</button>
 
     </form>
 
     <div id="caracteristicasAula" class="col-6">
       <legend>Características de la clase</legend>
-      <p>Aquí se mostrarán las caracteríscticas de la case una vez que hayas seleccionado alguna</p>
+      <p *ngFor="let classroom of classrooms" id="{{'clase_' + classroom.id}}" style="display: none;">{{classroom.properties}}</p>
     </div>
 
   </div>

@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Classroom } from './../../models/classroom/classroom'
 import { UserService } from './../../services/user/user.service'
 
-declare function ready(): any; 
+declare function selectValueChange(): any; 
 
 @Component({
   selector: 'app-send-form',
@@ -13,6 +13,12 @@ declare function ready(): any;
 })
 export class SendFormComponent implements OnInit {
   classrooms: Classroom[] | undefined;
+  user: any = {};
+  classroom_id: string | undefined;
+  date: string | undefined;
+  start_time: string | undefined;
+  end_time: string | undefined;
+  description: string | undefined;
 
   constructor(
     public userService: UserService,
@@ -20,33 +26,34 @@ export class SendFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.classrooms = this.userService.getClassrooms();
-    // console.log("HOLAAAAA");
-    // console.log(this.classrooms);
-    // console.log(typeof(this.classrooms));
-
     this.userService.getClassrooms().subscribe((data) => {
         this.classrooms = data;
-        console.log(data);
     })
-    console.log("AAAAAA");
-    ready();
+    selectValueChange();
+    this.user = localStorage.getItem("user");
+    this.user = JSON.parse(this.user);
   }
 
   send() {
-    /*
-    this.http.post('https://b697e71a90b9.ngrok.io/transaction/transfer',{
-      user_id: this.auth.user.user.id,
-      destination_email: this.origin,
-      amount: this.amount
+
+    console.log("usuer", this.user.id);
+    console.log("classroom", this.classroom_id);
+    
+    
+    this.http.post('https://683cbd401a84.ngrok.io/reservation',{
+      user_id: this.user.id,
+      classroom_id: this.classroom_id,
+      // date: this.date,
+      start_time: this.start_time,
+      end_time: this.end_time,
+      description: this.description
     }, {
       headers: new HttpHeaders()
-          .set('Authorization', `bearer ${this.token}`)
+          .set('Authorization', `bearer`)
     }).subscribe(data => {
       console.log(data);
-      alert("Se envio el dinero.");
+      alert("Se apartó la fecha.");
     });
-    */
-  }
 
+  }
 }
