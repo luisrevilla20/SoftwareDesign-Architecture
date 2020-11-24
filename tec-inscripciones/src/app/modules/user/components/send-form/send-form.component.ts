@@ -39,24 +39,12 @@ export class SendFormComponent implements OnInit {
   }
 
   send() {
-    console.log("AAAAAAA", typeof(this.user));
-    console.log("BBBBB", this.user);
-    console.log("user", this.user.id);
-    console.log("classroom", this.classroom_id);
-    console.log("start time", this.start_time);
-    console.log("end time", this.end_time);
-    console.log("descriotion", this.description);
-    
     var start_date = this.date?.concat(" " + this.start_time?.toString() as string);
     var end_date = this.date?.concat(" " + this.end_time?.toString() as string);
 
-    console.log("Star", start_date);
-    console.log("Stop", end_date);
-    
     this.http.post('https://683cbd401a84.ngrok.io/reservation',{
       user_id: this.user.id,
       classroom_id: this.classroom_id,
-      // date: this.date,
       start_date: start_date,
       end_date: end_date,
       description: this.description
@@ -64,7 +52,6 @@ export class SendFormComponent implements OnInit {
       headers: new HttpHeaders()
           .set('Authorization', `bearer`)
     }).subscribe(data => {
-      console.log(data);
       alert("Se apartó la fecha.");
     });
 

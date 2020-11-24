@@ -14,44 +14,32 @@
 	</div>
 </div> -->
 <div class="container mt-4">
-	<h1>Reservaciones realizadas</h1>
-  
-	<table class="table table-hover">
-	  <thead>
-		<tr>
-		  <th scope="col">Aula</th>
-		  <th scope="col">Amenidades del aula</th>
-		  <th scope="col">Fecha de Inicio</th>
-		  <th scope="col"></th>
-		</tr>
-	  </thead>
-	  <tbody>
-		<tr>
-		  <td>Default</td>
-		  <td>
-			<div class="list-group">
-			  <div class="list-group-item list-group-item-action">AA</div>
-			  <div class="list-group-item list-group-item-action">BB</div>
-			  <div class="list-group-item list-group-item-action">CC</div>
-			</div>
-		  </td>
-		  <td>18:00 pm</td>
-		  <td><button class="btn btn-danger">Eliminar</button></td>
-		</tr>
-		<tr>
-		  <td>Default</td>
-		  <td>
-			<div class="list-group">
-			  <div class="list-group-item list-group-item-action">AA</div>
-			  <div class="list-group-item list-group-item-action">BB</div>
-			  <div class="list-group-item list-group-item-action">CC</div>
-			</div>
-		  </td>
-		  <td>18:00 pm</td>
-		  <td><button class="btn btn-danger">Eliminar</button></td>
-		</tr>
-	  </tbody>
-	</table>
-  
-  </div>
-  
+  <h1>reservationes realizadas</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Aula</th>
+        <th scope="col">Amenidades del aula</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora de Inicio</th>
+        <th scope="col">Hora de Fin</th>
+        <th scope="col">Descripción</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{reservation.classroom}}</td>
+        <td>{{reservation.properties}}</td>
+        <td>{{reservation.date}}</td>
+        <td>{{reservation.start_time}}</td>
+        <td>{{reservation.end_time}}</td>
+        <td>{{reservation.description}}</td>
+        <td><button class="btn btn-danger" (click)="deleteReservation(reservation.id)">Eliminar</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
