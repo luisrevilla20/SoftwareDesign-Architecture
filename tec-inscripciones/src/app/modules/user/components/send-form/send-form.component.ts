@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Classroom } from './../../models/classroom/classroom'
 import { UserService } from './../../services/user/user.service'
+import { User } from '../../models/user/user';
 
 declare function selectValueChange(): any; 
 
@@ -22,30 +23,42 @@ export class SendFormComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    private http: HttpClient
+    private http: HttpClient,
+    //private start_time: any,
+    //private end_time: any,
   ) { }
 
   ngOnInit(): void {
+    this.user = localStorage.getItem("user");
+    this.user = JSON.parse(this.user);
     this.userService.getClassrooms().subscribe((data) => {
         this.classrooms = data;
     })
     selectValueChange();
-    this.user = localStorage.getItem("user");
-    this.user = JSON.parse(this.user);
+    
   }
 
   send() {
-
-    console.log("usuer", this.user.id);
+    console.log("AAAAAAA", typeof(this.user));
+    console.log("BBBBB", this.user);
+    console.log("user", this.user.id);
     console.log("classroom", this.classroom_id);
+    console.log("start time", this.start_time);
+    console.log("end time", this.end_time);
+    console.log("descriotion", this.description);
     
+    var start_date = this.date?.concat(" " + this.start_time?.toString() as string);
+    var end_date = this.date?.concat(" " + this.end_time?.toString() as string);
+
+    console.log("Star", start_date);
+    console.log("Stop", end_date);
     
     this.http.post('https://683cbd401a84.ngrok.io/reservation',{
       user_id: this.user.id,
       classroom_id: this.classroom_id,
       // date: this.date,
-      start_time: this.start_time,
-      end_time: this.end_time,
+      start_date: start_date,
+      end_date: end_date,
       description: this.description
     }, {
       headers: new HttpHeaders()

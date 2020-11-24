@@ -12,6 +12,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class InfoTableComponent implements OnInit {
 
   reservations: Reservation[] | undefined;
+  transactions: any;
   //token: string;
   constructor(
     //public auth: AuthService,
@@ -25,9 +26,9 @@ export class InfoTableComponent implements OnInit {
 
   getReservation() {
     /*
-    this.http.get<any>(`https://b697e71a90b9.ngrok.io/user/transactions/${(this.auth.user as any).user.id}`,{
+    this.http.get<any>(`https://683cbd401a84.ngrok.io/reservation/${(this.user as any).user.id}`,{
       headers: new HttpHeaders()
-          .set('Authorization', `bearer ${this.token}`)
+          .set('Authorization', `bearer`)
     }).subscribe(data => {
       this.transactions = data;
     });
